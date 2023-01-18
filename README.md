@@ -1,11 +1,8 @@
-Deploy a single page php-apache server in a docker :
+Deploy a single page php-apache server in a docker.
 
-```bash
-git clone https://github.com/dougy147/docker-minigpt
-cd ./docker-minigpt
-docker-compose up -d
-```
-
-then visit `http://localhost:80`
+1. Clone this repo and `cd ./docker-minigpt`
+2. place your own OpenAI API key in `API_KEY.env`
+3. `docker-compose up -d`
+4. visit `http://localhost:80`
 
 [<img src="assets/minigpt.png">]()
