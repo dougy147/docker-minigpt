@@ -6,6 +6,6 @@ cd ./docker-minigpt
 docker-compose up -d
 ```
 
-then visit `http://localhost:8222`
+then visit `http://localhost:80`
 
 [<img src="assets/minigpt.png">]()
