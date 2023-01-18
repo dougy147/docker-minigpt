@@ -1,0 +1,12 @@
+version: "3.3"
+services:
+  php-apache:
+    ports:
+      - "80:8222"
+    build: './build'
+    env_file:
+      - API_KEY.env # Add your OpenAI API key
+    #volumes:
+    #  - docker-gpt:/var/www/html
+#volumes:
+#  docker-gpt:

@@ -1,0 +1,24 @@
+#!/bin/bash
+
+MODEL="text-davinci-003"
+TEMPERATURE="0.9"
+MAX_TOKENS="4000"
+
+rawurlencode() {
+	local LANG=C
+	local IFS=
+	while read -n1 -r -d "$(echo -n "\000")" c; do
+		case	"$c" in [éèà+-_.~a-zA-Z0-9]) echo -n "$c" ;;
+			*) printf '%%%02x' "'$c" ;;
+		esac
+	done
+	}
+
+USER_INPUT="$1"
+USER_INPUT_TRANSFORMED=$(echo $USER_INPUT | rawurlencode)
+TEMP_HEADERS="{\"model\": \"${MODEL}\", \"prompt\": \"${USER_INPUT_TRANSFORMED}\", \"temperature\": ${TEMPERATURE}, \"max_tokens\": ${MAX_TOKENS}}"
+
+curl -s https://api.openai.com/v1/completions \
+	-H "Content-Type: application/json" \
+	-H "Authorization: Bearer ${API_KEY}" \
+	-d "${TEMP_HEADERS}" | jq -r '.choices[0] .text' | sed '0,/^[[:space:]]*$/{//d}' | sed '0,/^[[:space:]]*$/{//d}'

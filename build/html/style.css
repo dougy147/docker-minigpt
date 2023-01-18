@@ -1,0 +1,116 @@
+html {
+	background: #1e1e2e;
+	color: #d9e0ee;
+}
+
+body {
+	color: #d9e0ee;
+	font-family: 'JetBrains Mono', monospace;
+}
+
+h1 {
+	color: #efa554;
+	font-family: 'JetBrains Mono', monospace;
+	font-size: 48px;
+	text-align:center;
+}
+
+h2 {
+	font-family: 'JetBrains Mono', monospace;
+	text-align:center;
+	color: #efa554;
+}
+
+a {
+	font-family: 'JetBrains Mono', monospace;
+	text-decoration: none;
+	color: #75d7ec;
+	text: bold;
+}
+
+input.user {
+	background-color:black;
+	border: 1px solid #665771;
+	border-radius: 10px;
+	box-shadow: 2px 2px 3px #665771;
+	color: #eeb6b7;
+	font-size:18px;
+	font-family: 'JetBrains Mono', monospace;
+	height:30px;
+	outline: 0;
+	padding: 4px 7px;
+	text-align:center;
+	/*width:860px;*/
+	width:60%;
+}
+
+input.user:focus {
+	border-color: #907594;
+}
+
+::placeholder {
+	color: #665771;
+}
+
+input.button {
+	background-color:black;
+	border: 1px solid #665771;
+	border-radius: 10px;
+	box-shadow: 2px 2px 3px #665771;
+	color: #907594;
+	cursor: pointer;
+	font-size:12px;
+	font-family:'JetBrains Mono', monospace;
+	height:30px;
+	text-align:center;
+	width:65px;
+}
+
+input.button:hover,
+input.button:focus {
+	background-color: #583956;
+	color: black;
+	font-weight: bold;
+	border: 1px solid #12121C;
+       	box-shadow: 10px 10px 5px #12121C;
+}
+
+div.terminal {
+       	background-color:black;
+	border-radius: 10px;
+       	box-shadow: 10px 10px 5px #12121C;
+	overflow:auto;
+	font-family: 'JetBrains Mono', monospace;
+       	height:70%;
+       	overflow: auto;
+       	padding-top:40px;
+	padding-right:40px;
+	padding-left:40px;
+	padding-bottom:40px;
+	text-align:justify;
+       	/*width: 950px;*/
+        white-space: wrap;
+	width:70%;
+}
+
+p.output {
+	color: #efedff;
+	overflow: hidden;
+        animation: typewriter 1.2s steps(100, end),
+	  blink-caret 800ms step-end ;
+}
+
+@keyframes typewriter {
+       from {width: 0%;}
+       to {width: 100%;}
+}
+
+@keyframes blink-caret {
+       from, to { border-color: transparent }
+       50% { border-color: '#efa554'; }
+}
+
+p.user_asks_output {
+	color: #be95b6;
+	text-align: center;
+}
